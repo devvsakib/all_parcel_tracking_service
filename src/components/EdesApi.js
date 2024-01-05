@@ -25,6 +25,7 @@ const EdesApi = () => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
+    const url = "https://e-deshdelivery.com/universalapi/allapi/unAuthorized_parcel_tracking" + "?company_name=EDESH"
     const fetchData = async (trackId) => {
         let data = JSON.stringify({
             access_id: 1,
@@ -35,16 +36,10 @@ const EdesApi = () => {
         // im facing cors issue on vercel
         let config = {
             method: "post",
-            url: Degital_Ocean_flag
-                ? "https://e-deshdelivery.com/universalapi/allapi/unAuthorized_parcel_tracking" +
-                "?company_name=" +
-                company_name
-                : "/universalapi/allapi/unAuthorized_parcel_tracking" +
-                "?company_name=" +
-                company_name,
+            url: url,
             headers: {
                 "Content-Type": "application/json",
-                'Access-Control-Allow-Origin': 'http://localhost:3000',
+                'Access-Control-Allow-Origin': '*',
                 //'Authorization': `Bearer ${logingInformation_LocalStore.token}`
             },
             data: data,
@@ -230,7 +225,7 @@ const EdesApi = () => {
             } */}
 
             {
-                productinfo.product_infor &&
+                productinfo?.product_infor &&
                 <div className="text-dark parcel_container my-5">
                     <div className="grid grid-cols-2 justify-between bg-edsBg p-3">
                         <div>Waybill </div>
@@ -500,7 +495,8 @@ const EdesApi = () => {
                                 productinfo.product_infor.merchentName}
                         </h6>
                     </div>
-                </div>}
+                </div>
+            }
         </div>
     );
 };
