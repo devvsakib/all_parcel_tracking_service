@@ -30,6 +30,7 @@ const EdesApi = () => {
                 product_waybill: trackId,
             });
 
+            // im facing cors issue on vercel
             let config = {
                 method: "post",
                 url: Degital_Ocean_flag
@@ -41,23 +42,22 @@ const EdesApi = () => {
                     company_name,
                 headers: {
                     "Content-Type": "application/json",
+                    'Access-Control-Allow-Origin': '*',
                     //'Authorization': `Bearer ${logingInformation_LocalStore.token}`
                 },
                 data: data,
             };
 
-            if (config) {
-                axios(config)
-                    .then(function (response) {
-                        return response;
-                    })
-                    .then((res) => {
-                        setProductinfo(res.data.message.message);
-                        //setsearchresult(res.data.message.message.status_datetime)
-                        //setinfoModalOpen(true);
-                        //setpayload(true);
-                    });
-            }
+            axios(config)
+                .then(function (response) {
+                    return response;
+                })
+                .then((res) => {
+                    setProductinfo(res.data.message.message);
+                    //setsearchresult(res.data.message.message.status_datetime)
+                    //setinfoModalOpen(true);
+                    //setpayload(true);
+                });
         }
     };
 
