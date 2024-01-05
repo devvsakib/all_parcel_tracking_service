@@ -85,6 +85,12 @@ const Edes = () => {
         );
         setCopyFlag(true);
     };
+    const hanldeCopyRef = (e) => {
+        navigator.clipboard.writeText(
+            productinfo.product_infor.referencE_NO
+        );
+        setCopyFlag(true);
+    };
 
     if (copyFlag) {
         toast.success("Order ID Coped");
@@ -254,10 +260,10 @@ const Edes = () => {
                             {copyFlag ? (
                                 <FaRegCopy
                                     className="deliveredEdes"
-                                    onClick={(e) => hanldeCopyEvent(e)}
+                                    onClick={(e) => hanldeCopyRef(e)}
                                 />
                             ) : (
-                                <FaRegCopy onClick={(e) => hanldeCopyEvent(e)} />
+                                <FaRegCopy className="cursor-pointer" onClick={(e) => hanldeCopyRef(e)} />
                             )}
                         </div>
                     </div>
