@@ -18,31 +18,33 @@
 
     --background-start: rgb(var(--background-start-rgb));
     --background-end: rgb(var(--background-end-rgb));
-    --background-gradient: linear-gradient(
-        180deg,
-        var(--background-start) 0%,
-        var(--background-end) 100%
-    );
+    --background-gradient: linear-gradient(180deg,
+            var(--background-start) 0%,
+            var(--background-end) 100%);
 
     --border-radius: 25px;
 }
-h4{
+
+h4 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary);
 }
-h4[name="delivered"]{
+
+h4[name="delivered"] {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--delivered);
 }
-h6[name="receiver"]{
+
+h6[name="receiver"] {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--tertiary);
 }
-.delivered{
-    padding: 0rem  1rem;
+
+.delivered {
+    padding: 0rem 1rem;
     background: var(--delivered);
     color: var(--foreground-rgb);
     border-radius: var(--border-radius);
@@ -54,6 +56,6 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.text-success{
+.text-success {
     color: green;
 }

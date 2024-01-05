@@ -5,7 +5,7 @@ const SearchBox = ({ handleSearch }) => {
 
     return (
 
-        <div className="flex mx-auto w-fit mb-5">
+        <div className="flex mx-auto w-fit mb-10">
             <input
                 value={trackId}
                 onChange={(e) => {

@@ -1,0 +1,223 @@
+.ant-row {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+}
+
+.left-side .body {
+    flex-direction: row;
+    padding-top: 73px;
+}
+
+.left-side .body .header {
+    padding-bottom: 0px;
+}
+
+.left-side .body .header .title-wrapper {
+    padding-bottom: 5px;
+}
+
+.left-side .body .header .title-wrapper p {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+}
+
+.subtitle-wrapper .subtitle {
+    font-weight: bold;
+}
+
+.check {
+    width: 40px;
+    height: 40px;
+    margin-left: 0px;
+    border: 1px solid rgb(19, 160, 84);
+}
+
+.tracking-wrapper {
+    padding-left: 3rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.ant-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+@media (min-width: 768px) {
+    .ant-col-md-8 {
+        display: block;
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ant-col-xl-8 {
+        display: block;
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
+}
+
+.right-side {
+    padding: 20px 25px;
+    min-height: 92vh;
+    background-color: rgb(245, 245, 245);
+}
+
+.right-side .customer-info .header {
+    display: flex;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    -moz-box-align: baseline;
+    align-items: baseline;
+}
+
+.right-side .customer-info .header .caption {
+    padding-bottom: 20px;
+}
+
+.header .caption .title {
+    font-weight: bold;
+}
+
+.right-side .customer-info .body {
+    padding-top: 73px;
+}
+
+@media (min-width: 1200px) {
+    .right-side .customer-info .body .info-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 992px) {
+    .right-side .customer-info .body .info-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .right-side .customer-info .body .info-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 576px) {
+    .right-side .customer-info .body .info-wrapper {
+        flex-direction: row;
+    }
+}
+
+.right-side .customer-info .body .info-wrapper {
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    flex-direction: row;
+}
+
+.right-side .customer-info .body .info-wrapper .title-wrapper {
+    padding-bottom: 4px;
+}
+
+.right-side .customer-info .body .info-wrapper .subtitle-wrapper .subtitle {
+    font-weight: bold;
+}
+
+.left-side .body .tracking-wrapper .vertical-timeline .vertical-timeline-element-content p {
+    margin: 0px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.left-side .body .tracking-wrapper .date.current {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.vertical-timeline-element--work {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+}
+
+.vertical-timeline-element-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(19, 160, 84);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    border-radius: 25px;
+    /* position: relative;
+    z-index: 1;
+    margin-left: -20px;
+    margin-top: -10px; */
+}
+
+.tracking-wrapper {
+    padding-left: 75px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.vertical-timeline {
+    width: 95%;
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0em 0;
+}
+
+.vertical-timeline-element-icon .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.tracking-wrapper .vertical-timeline::before {
+    background: rgb(0, 220, 101);
+    width: 1px;
+}
+
+.vertical-timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #fff;
+    z-index: -1;
+}
+
+.vertical-timeline-element-title {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.tracking-wrapper .date {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.tracking-wrapper .vertical-timeline .vertical-timeline-element-content .vertical-timeline-element-title {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.tracking-wrapper .vertical-timeline .vertical-timeline-element-content p {
+    margin: 0px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+}
