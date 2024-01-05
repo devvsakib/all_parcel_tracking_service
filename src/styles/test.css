@@ -1,0 +1,29 @@
+.parcel_container {
+    /* background: red; */
+    /* width: 50%; */
+    /* margin: auto; */
+}
+
+@media screen and (max-width: 668px) {
+    .parcel_container {
+        width: 100%;
+        margin: auto;
+        /* background-color: lightgreen; */
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .parcel_container {
+        width: 80%;
+        margin: auto;
+        /* background-color: rgb(51, 85, 220); */
+    }
+}
+
+@media screen and (min-width: 1312px) {
+    .parcel_container {
+        width: 60%;
+        margin: auto;
+        /* background-color: rgb(243, 223, 12); */
+    }
+}

@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #fa4a6f;
+    --secondary: #232635;
+    --tertiary: #0eb7be;
+    --delivered: #15C15D;
+    --quaternary: #ec3899;
+    --quinary: #36394b;
+    --foreground-rgb: #fff;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+
+    /* service theme */
+    --eds-background: #f5f5f5;
+
+    --background-start: rgb(var(--background-start-rgb));
+    --background-end: rgb(var(--background-end-rgb));
+    --background-gradient: linear-gradient(
+        180deg,
+        var(--background-start) 0%,
+        var(--background-end) 100%
+    );
+
+    --border-radius: 25px;
+}
+h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+h4[name="delivered"]{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--delivered);
+}
+h6[name="receiver"]{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--tertiary);
+}
+.delivered{
+    padding: 0rem  1rem;
+    background: var(--delivered);
+    color: var(--foreground-rgb);
+    border-radius: var(--border-radius);
+}
+
+
+body {
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+.text-success{
+    color: green;
+}

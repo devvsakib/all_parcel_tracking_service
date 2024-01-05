@@ -1,0 +1,45 @@
+
+.lead {
+    font-weight: 500;
+}
+
+.list-inline-item {
+    display: inline-block;
+
+    &:not(:last-child) {
+        margin-right: '16px';
+    }
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: '16px';
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: '16px';
+}
+
+
+.initialism {
+    text-transform: uppercase;
+}
+
+.blockquote {
+    margin-bottom: '16px';
+}
+
+.blockquote:last-child {
+    margin-bottom: 0;
+}
+
+.blockquote-footer {
+    margin-top: -'16px';
+    margin-bottom: '16px';
+    color: 'red';
+
+}
+
+.blockquote-footer::before {
+    content: "\2014\00A0";
+
+}

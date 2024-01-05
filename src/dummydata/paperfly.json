@@ -1,0 +1,59 @@
+{
+    "sender": {
+      "full_name": "DARAZ",
+      "phone_number": "",
+      "thana_name": "Tejgaon Shilpanchal",
+      "district": "Dhaka"
+    },
+    "receiver": {
+      "full_name": "Sakib Ahmed",
+      "phone_number": "017XXXXX300",
+      "thana_name": "Moulvibazar Sadar",
+      "district": "Moulvibazar",
+      "address_line": "Sylhet, Moulvibazar, Kamalganj Shamsher Nagar, shamshernagar, airport road, psi market(deliver here PSI MARKET)"
+    },
+    "package": {
+      "package_option": "standard",
+      "merchant_provide_weight": "0.00",
+      "collectable_amount": 379,
+      "collected_amount": 379,
+      "merchant_order_ref": "PFL-BD0009426886",
+      "package_description": ""
+    },
+    "status": "Delivered",
+    "order_number": "130923-95379-A1-E3",
+    "timeline": [
+      {
+        "date_time": "2023-09-19 05:35:23",
+        "message": "Invoiced"
+      },
+      {
+        "date_time": "2023-09-17 15:41:18",
+        "message": "Delivered"
+      },
+      {
+        "date_time": "2023-09-17 15:33:54",
+        "message": "On the way to delivery,Name: Md. Koysor Miah,Call: 01646705252"
+      },
+      {
+        "date_time": "2023-09-16 21:45:24",
+        "message": "On hold, Reason: কাস্টমার ফোন রিসিভ করেন নাই"
+      },
+      {
+        "date_time": "2023-09-16 11:22:46",
+        "message": "On the way to delivery,Name: Md. Koysor Miah,Call: 01646705252"
+      },
+      {
+        "date_time": "2023-09-16 10:24:59",
+        "message": "Reached delivery point"
+      },
+      {
+        "date_time": "2023-09-14 22:07:09",
+        "message": "Parcel Picked"
+      },
+      {
+        "date_time": "2023-09-13 04:04:25",
+        "message": "Pickup request sent"
+      }
+    ]
+  }

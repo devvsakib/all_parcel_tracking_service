@@ -1,0 +1,82 @@
+{
+    "product_infor": {
+      "producT_ID": 1393518,
+      "producT_WAYBILL_NUMBER": "240101PA21120",
+      "producT_CUSTOMER_ID": 373,
+      "referencE_NO": "EDS-BD-0001228103",
+      "producT_NAME": "Package from Daraz",
+      "producT_DETAILS": "Package from Daraz",
+      "consigneE_NAME": "Sakib Ahmed",
+      "address": "Sylhet, Moulvibazar, Kamalganj Shamsher Nagar, shamshernagar, airport road, psi market(deliver here PSI MARKET)",
+      "pincode": "1230",
+      "areA_CODE": "Sreemangal DC",
+      "districT_INCHARGE_ID": 998877,
+      "contacT_NUMBER": "8801792552300",
+      "emergencY_NUMBER": "1792552300",
+      "producT_WEIGHT": 0.1,
+      "producT_TYPE": null,
+      "producT_URGENT_STATUS": null,
+      "producT_PROCESSING_STATUS": "Product Delivered",
+      "producT_PRODESSING_STATUS_DATETIME": "2024-01-03T18:04:56",
+      "producT_TOTAL": 0,
+      "producT_PAYMENT_TYPE": "PREPAID",
+      "producT_VALUE_AMOUNT": 0,
+      "producT_DESCRIPTION": "Package from Daraz",
+      "baG_ID_NUMBER": 26520,
+      "producT_ENTRY_TIME": "2024-01-01T04:21:34.123",
+      "producT_DELEVERY_TIME": "2024-01-03T18:04:56",
+      "producT_DELEVERED_BY": 20155,
+      "receiveR_NAME": "Sakib Ahmed",
+      "receiveR_PHONE_NUMBER": "8801792552300",
+      "producT_RETURN_ADDRESS": "",
+      "returN_PIN": "",
+      "reason": null,
+      "eoD_STATUS": 0,
+      "producT_LOCK_STATUS": null,
+      "eoD_STATUS_DATETIME": "2024-01-03T18:04:56",
+      "eoD_STATUS_FINISH_DATETIME": "2024-01-04T10:50:36",
+      "baG_WAYBILL_NUMBER": "240102BA50958 ## BagReceivedInDC ## 1/3/2024 9:14:20 AM",
+      "flag": 0,
+      "eoD_COMPLETE_OR_NOT": "EOD Complete",
+      "update_track": "",
+      "merchentName": "Daraz"
+    },
+    "status_datetime": [
+      {
+        "processing_status": "Product Menifested",
+        "date_time": "1/1/2024 4:21:34 AM"
+      },
+      {
+        "processing_status": "Product in System",
+        "date_time": "1/2/2024 2:01:14 PM@Irtajul Haque Pulock"
+      },
+      {
+        "processing_status": "Product in Bag",
+        "date_time": "1/2/2024 7:49:13 PM@Akash Mia"
+      },
+      {
+        "processing_status": "Product in Transit ",
+        "date_time": " 1/2/2024 7:58:22 PM @ Akash Mia"
+      },
+      {
+        "processing_status": "Product in Transit ",
+        "date_time": " 1/2/2024 7:58:22 PM @ Akash Mia"
+      },
+      {
+        "processing_status": "RECEIVED BY DC (OK) ",
+        "date_time": " 1/3/2024 7:52:13 AM @ Subash Goshami"
+      },
+      {
+        "processing_status": "RECEIVED BY DC (OK) ",
+        "date_time": " 1/3/2024 7:52:13 AM @ Subash Goshami"
+      },
+      {
+        "processing_status": "Product Received by FE",
+        "date_time": "1/3/2024 10:54:12 AM@ dc:Subash Goshami@ fe:Md. Rashid Miah"
+      },
+      {
+        "processing_status": "Product Delivered ",
+        "date_time": " 1/3/2024 6:04:56 PM@Md. Rashid Miah"
+      }
+    ]
+  }
