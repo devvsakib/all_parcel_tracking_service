@@ -22,48 +22,55 @@ import SearchBox from "./SearchBox";
 const EdesApi = () => {
     // "EDS-BD-0001228104"
     const [productinfo, setProductinfo] = useState([]);
-    const handleSearch = (trackId) => {
-        if (trackId) {
-            let data = JSON.stringify({
-                access_id: 1,
-                access_token: "firstAccessToken_test_product_track",
-                product_waybill: trackId,
-            });
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState(null)
+    const [error, setError] = useState(null)
+    const fetchData = async (trackId) => {
+        let data = JSON.stringify({
+            access_id: 1,
+            access_token: "firstAccessToken_test_product_track",
+            product_waybill: trackId,
+        });
 
-            // im facing cors issue on vercel
-            let config = {
-                method: "post",
-                url: Degital_Ocean_flag
-                    ? "https://e-deshdelivery.com/universalapi/allapi/unAuthorized_parcel_tracking" +
-                    "?company_name=" +
-                    company_name
-                    : "/universalapi/allapi/unAuthorized_parcel_tracking" +
-                    "?company_name=" +
-                    company_name,
-                headers: {
-                    "Content-Type": "application/json",
-                    'Access-Control-Allow-Origin': '*',
-                    //'Authorization': `Bearer ${logingInformation_LocalStore.token}`
-                },
-                data: data,
-            };
+        // im facing cors issue on vercel
+        let config = {
+            method: "post",
+            url: Degital_Ocean_flag
+                ? "https://e-deshdelivery.com/universalapi/allapi/unAuthorized_parcel_tracking" +
+                "?company_name=" +
+                company_name
+                : "/universalapi/allapi/unAuthorized_parcel_tracking" +
+                "?company_name=" +
+                company_name,
+            headers: {
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Origin': '*',
+                //'Authorization': `Bearer ${logingInformation_LocalStore.token}`
+            },
+            data: data,
+        };
 
-            axios(config)
-                .then(function (response) {
-                    return response;
-                })
-                .then((res) => {
-                    setProductinfo(res.data.message.message);
-                    //setsearchresult(res.data.message.message.status_datetime)
-                    //setinfoModalOpen(true);
-                    //setpayload(true);
-                });
+        try {
+            setLoading(true)
+            const res = await axios(config)
+            setProductinfo(res.data.message.message);
+            console.log(res.data)
+            setLoading(false)
+            setError(null)
+        } catch (error) {
+            setError(error)
+            setLoading(false)
         }
-    };
+    }
+
+    const handleSearch = (trackId) => {
+        console.log(trackId)
+        fetchData(trackId)
+    }
 
     // initial load
     useEffect(() => {
-        handleSearch("EDS-BD-0001228104");
+        fetchData("EDS-BD-0001228104");
     }, []);
 
     const [copyFlag, setCopyFlag] = useState(false);
