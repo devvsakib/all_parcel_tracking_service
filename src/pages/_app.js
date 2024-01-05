@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import '@/styles/test.css'
 import '@/styles/paperfly.css'
 import '@/styles/redx.css'
+import '@/styles/tailwind.css'
 import '@/styles/type.css'
 import Head from 'next/head'
 

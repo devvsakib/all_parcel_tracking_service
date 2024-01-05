@@ -9,6 +9,58 @@
     border-radius: 4px;
     background-color: #E8F6FC;
 }
+.jss18 {
+	color: #5B6676;
+	font-size: 12px;
+	font-weight: 500;
+}
+.timeline_dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 20px;
+	background-color: #15C15D;
+}
+.timeline_line {
+	width: 2px;
+	height: 100%;
+	margin-left: 3px;
+	background-color: #BBE5F7;
+}
+.type {
+    color: #5B6676;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.phone {
+    color: #5B6676;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.name {
+    color: #1E62D5;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.address {
+    color: #1EA9E4;
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    flex-direction: row;
+}
+
+.addressDivider {
+    width: 5px;
+    height: 5px;
+    margin: 6px;
+    margin-top: 19px;
+    margin-left: 8px;
+    border-radius: 10px;
+    background-color: #1EA9E4;
+}
 
 .ball {
     width: 8px;
@@ -16,11 +68,12 @@
     border-radius: 20px;
     background-color: #15C15D;
 }
-.line{
-        width: 2px;
-        height: 100%;
-        margin-left: 3px;
-        background-color: #BBE5F7;
+
+.line {
+    width: 2px;
+    height: 100%;
+    margin-left: 3px;
+    background-color: #BBE5F7;
 }
 
 .ball--active {
@@ -89,4 +142,47 @@
     height: 100%;
     margin-left: 3px;
     background-color: #E8F6FC;
+}
+
+.dottedState {
+    width: 5px;
+    height: 5px;
+    margin: 6px;
+    margin-top: 19px;
+    margin-left: 8px;
+    border-radius: 10px;
+    background-color: #1EA9E4;
+}
+
+.percelImage {
+    gap: 8px;
+    right: 0;
+    width: 20px;
+    border: none;
+    height: 20px;
+    display: flex;
+    padding: 3px;
+    position: relative;
+    align-items: center;
+    font-weight: 500;
+    margin-right: 7px;
+    border-radius: 4px;
+    background-color: #BBE5F7;
+}
+
+.date_time {
+    color: #8D97A4;
+    font-size: 14px;
+    margin-top: -3px;
+    align-items: center;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.status {
+    color: #8D97A4;
+    font-size: 14px;
+    align-items: center;
+    font-weight: 700;
+    line-height: 120%;
 }

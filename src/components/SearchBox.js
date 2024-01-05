@@ -5,7 +5,7 @@ const SearchBox = ({ handleSearch }) => {
 
     return (
 
-        <div className="flex mx-auto w-fit mb-10">
+        <div className="flex mx-auto w-fit mb-5">
             <input
                 value={trackId}
                 onChange={(e) => {
@@ -13,11 +13,10 @@ const SearchBox = ({ handleSearch }) => {
                 }}
                 type="text"
                 placeholder="Enter your tracking ID"
-                className="border border-gray-200 outline-none p-4 rounded-l-md"
+                className="border border-gray-200 outline-none p-2  rounded-l-md"
             />
             <button
                 disabled={trackId.length === 0}
-
                 className="bg-blue-500 text-white px-4 rounded-r-md"
                 onClick={() => handleSearch(trackId)}
             >Track</button>

@@ -49,6 +49,13 @@ h6[name="receiver"] {
     color: var(--foreground-rgb);
     border-radius: var(--border-radius);
 }
+.deliveredEdes {
+    color: rgb(54, 218, 103);
+    }
+
+.returned {
+    color: red
+}
 
 
 body {

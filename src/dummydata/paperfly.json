@@ -1,9 +1,11 @@
 {
-    "sender": {
-      "full_name": "DARAZ",
-      "phone_number": "",
-      "thana_name": "Tejgaon Shilpanchal",
-      "district": "Dhaka"
+    "package": {
+      "package_option": "standard",
+      "merchant_provide_weight": "0.00",
+      "collectable_amount": 379,
+      "collected_amount": 379,
+      "merchant_order_ref": "PFL-BD0009426886",
+      "package_description": ""
     },
     "receiver": {
       "full_name": "Sakib Ahmed",
@@ -12,13 +14,11 @@
       "district": "Moulvibazar",
       "address_line": "Sylhet, Moulvibazar, Kamalganj Shamsher Nagar, shamshernagar, airport road, psi market(deliver here PSI MARKET)"
     },
-    "package": {
-      "package_option": "standard",
-      "merchant_provide_weight": "0.00",
-      "collectable_amount": 379,
-      "collected_amount": 379,
-      "merchant_order_ref": "PFL-BD0009426886",
-      "package_description": ""
+    "sender": {
+      "full_name": "DARAZ",
+      "phone_number": "",
+      "thana_name": "Tejgaon Shilpanchal",
+      "district": "Dhaka"
     },
     "status": "Delivered",
     "order_number": "130923-95379-A1-E3",

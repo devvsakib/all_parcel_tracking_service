@@ -1,14 +1,16 @@
-
 .lead {
     font-weight: 500;
 }
 
 .list-inline-item {
     display: inline-block;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: '16px';
+}
 
-    &:not(:last-child) {
-        margin-right: '16px';
-    }
+.list-inline-item:not(:last-child) {
+    margin-right: '16px';
 }
 
 .list-inline-item:not(:last-child) {

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import { company_name, Degital_Ocean_flag } from "./Linksidebar";
 // import "./Test.css";
@@ -20,15 +19,17 @@ import { HiOutlineTruck } from "react-icons/hi";
 import { MdCancel } from "react-icons/md";
 import SearchBox from "./SearchBox";
 
-const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
+const Edes = () => {
+    // "EDS-BD-0001228104"
     const [productinfo, setProductinfo] = useState([]);
     console.log("productinfo", productinfo);
-    const handleSearch = () => {
+    const handleSearch = (trackId) => {
+        console.log("trackId", trackId);
         if (trackId) {
             let data = JSON.stringify({
                 access_id: 1,
                 access_token: "firstAccessToken_test_product_track",
-                product_waybill: "EDS-BD-0001228104",
+                product_waybill: trackId,
             });
             console.log("this is data : ", data);
 
@@ -70,8 +71,10 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
             }
         }
     };
+
+    // initial load
     useEffect(() => {
-        handleSearch();
+        handleSearch("EDS-BD-0001228104");
     }, []);
 
     const [copyFlag, setCopyFlag] = useState(false);
@@ -127,7 +130,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product Received by FE"
             ) {
                 // accepted = { color: "green" };
-                setAccepted("text-success");
+                setAccepted("deliveredEdes");
                 setAcceptedStatus(true);
             }
             if (
@@ -140,7 +143,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product in Transit" ||
                 singleStatus.processing_status == "Product Received by FE"
             ) {
-                setAccepted("text-success");
+                setAccepted("deliveredEdes");
                 setAcceptedStatus(true);
             }
             if (
@@ -153,7 +156,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product Received by FE"
             ) {
                 console.log("Product in Bag ");
-                setPicked("text-success");
+                setPicked("deliveredEdes");
                 setPickedStatus(true);
             }
             if (
@@ -165,7 +168,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product Received by FE"
             ) {
                 console.log("Product in Transit ");
-                setTransit("text-success");
+                setTransit("deliveredEdes");
                 setTransitStatus(true);
             }
             if (
@@ -175,7 +178,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product Received by FE"
             ) {
                 console.log("Product Received by FE ");
-                setOutForDelivery("text-success");
+                setOutForDelivery("deliveredEdes");
                 setOutForDeliveryStatus(true);
             }
             if (
@@ -183,25 +186,25 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                 singleStatus.processing_status == "Product Delivered"
             ) {
                 console.log("Product Delivered ");
-                setDelivered("text-success");
+                setDelivered("deliveredEdes");
                 setDeliveredStatus(true);
                 setHoldStatus(false);
                 setReturnStatus(false);
                 setLostStatus(false);
             } else if (singleStatus.processing_status == "Product Lost ") {
-                setDelivered("text-danger");
+                setDelivered("text-red-400");
                 setLostStatus(true);
                 setDeliveredStatus(false);
                 setHoldStatus(false);
                 setReturnStatus(false);
             } else if (singleStatus.processing_status == "Product Returned ") {
-                setDelivered("text-danger");
+                setDelivered("text-red-400");
                 setReturnStatus(true);
                 setDeliveredStatus(false);
                 setHoldStatus(false);
                 setLostStatus(false);
             } else if (singleStatus.processing_status == "Product Hold  ") {
-                setDelivered("text-danger");
+                setDelivered("text-red-400");
                 setHoldStatus(true);
                 setDeliveredStatus(false);
                 setReturnStatus(false);
@@ -212,11 +215,14 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
 
     return (
         <div className="w-full  py-5">
-            <div className="flex justify-between items-center">
+            <div className="flex ">
                 <SearchBox
                     handleSearch={handleSearch}
                 />
             </div>
+            {/* {
+                productinfo && productinfo
+            } */}
 
             {
                 productinfo.product_infor &&
@@ -230,7 +236,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                             </p>
                             {copyFlag ? (
                                 <FaRegCopy
-                                    className="text-success"
+                                    className="deliveredEdes"
                                     onClick={(e) => hanldeCopyEvent(e)}
                                 />
                             ) : (
@@ -247,7 +253,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                             </p>
                             {copyFlag ? (
                                 <FaRegCopy
-                                    className="text-success"
+                                    className="deliveredEdes"
                                     onClick={(e) => hanldeCopyEvent(e)}
                                 />
                             ) : (
@@ -262,7 +268,13 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                         <div className="col-lg-8 col-md-8 col-sm-8 text-end">
                             <h5>
                                 {productinfo.product_infor &&
-                                    productinfo.product_infor.contacT_NUMBER}
+                                    productinfo.product_infor.contacT_NUMBER.slice(-4) == "2300" ? (
+                                    <span>
+                                        00000000000
+                                    </span>
+                                ) : (
+                                    productinfo.product_infor.contacT_NUMBER
+                                )}
                             </h5>
                             <h6 name="receiver">
                                 {productinfo.product_infor &&
@@ -375,7 +387,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                                     )}
                                 {returnStatus && (
                                     <div className="text-[3.5rem] p-3">
-                                        <RiArgridrow />
+                                        <RiArrowGoBackLine />
                                     </div>
                                 )}
                                 {holdStatus && (
@@ -478,7 +490,7 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
                     {/* seller info */}
                     <div className="grid grid-cols-4  bg-edsBg p-3 mt-2">
                         <h5>Seller Info</h5>
-                        <h6 className="text-success">
+                        <h6 className="deliveredEdes">
                             {productinfo.product_infor &&
                                 productinfo.product_infor.merchentName}
                         </h6>
@@ -488,4 +500,4 @@ const EDES = ({ trackId = "EDS-BD-0001228104" }) => {
     );
 };
 
-export default EDES
+export default Edes

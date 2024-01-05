@@ -1,0 +1,14 @@
+.font600 {
+    @apply font-semibold;
+}
+
+.font500 {
+    @apply text-gray-500 text-sm font-medium;
+}
+.titlePfl {
+    @apply text-[12px];
+}
+
+.box {
+    @apply rounded p-4;
+}
