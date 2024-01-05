@@ -44,7 +44,7 @@ const EdesApi = () => {
                 company_name,
             headers: {
                 "Content-Type": "application/json",
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'http://localhost:3000',
                 //'Authorization': `Bearer ${logingInformation_LocalStore.token}`
             },
             data: data,
