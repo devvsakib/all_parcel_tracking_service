@@ -19,7 +19,7 @@ import { HiOutlineTruck } from "react-icons/hi";
 import { MdCancel } from "react-icons/md";
 import SearchBox from "./SearchBox";
 
-const Edes = () => {
+const EdesApi = () => {
     // "EDS-BD-0001228104"
     const [productinfo, setProductinfo] = useState([]);
     const handleSearch = (trackId) => {
@@ -498,4 +498,4 @@ const Edes = () => {
     );
 };
 
-export default Edes
+export default EdesApi

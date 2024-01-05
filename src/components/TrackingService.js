@@ -1,7 +1,7 @@
 import React from 'react'
 import RedX from './RedX'
 import Paperfly from './Paperfly'
-import Edes from './Edes.js'
+import EdesApi from './EdesApi.js'
 
 const TrackingService = (props) => {
     const { trackId, deliverService } = props
@@ -9,7 +9,7 @@ const TrackingService = (props) => {
     return (
         <div className='mx-auto'>
             {
-                deliverService === "EDS API" ? <Edes /> : deliverService === "Redx API" ? <RedX />
+                deliverService === "EDS API" ? <EdesApi /> : deliverService === "Redx API" ? <RedX />
                     : deliverService === "Paperfly API" ? <Paperfly /> : <div>Comming soon...</div>
             }
         </div>
