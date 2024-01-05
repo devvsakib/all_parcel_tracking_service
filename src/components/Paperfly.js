@@ -16,7 +16,7 @@ const Paperfly = () => {
     const fetchData = async (trackId) => {
         try {
             setLoading(true)
-            const res = await axios.post(api + trackId)
+            const res = await axios.post(api + trackId.trim())
             setData(res.data)
             console.log(res.data)
             setLoading(false)
@@ -27,9 +27,9 @@ const Paperfly = () => {
         }
     }
 
-    // useEffect(() => {
-    //     fetchData()
-    // }, [])
+    useEffect(() => {
+        fetchData(" PFL-BD0009426886")
+    }, [])
     function convertTime(inputTime) {
         const months = [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',

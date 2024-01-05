@@ -22,16 +22,13 @@ import SearchBox from "./SearchBox";
 const Edes = () => {
     // "EDS-BD-0001228104"
     const [productinfo, setProductinfo] = useState([]);
-    console.log("productinfo", productinfo);
     const handleSearch = (trackId) => {
-        console.log("trackId", trackId);
         if (trackId) {
             let data = JSON.stringify({
                 access_id: 1,
                 access_token: "firstAccessToken_test_product_track",
                 product_waybill: trackId,
             });
-            console.log("this is data : ", data);
 
             let config = {
                 method: "post",
@@ -49,23 +46,15 @@ const Edes = () => {
                 data: data,
             };
 
-            // console.log("this is config", config);
-
             if (config) {
                 axios(config)
                     .then(function (response) {
-                        // console.log(JSON.stringify(response.data));
-                        // console.log(response.data);
-
                         return response;
                     })
                     .then((res) => {
-                        // console.log("new response", res);
                         setProductinfo(res.data.message.message);
                         //setsearchresult(res.data.message.message.status_datetime)
-
                         //setinfoModalOpen(true);
-
                         //setpayload(true);
                     });
             }
@@ -78,6 +67,7 @@ const Edes = () => {
     }, []);
 
     const [copyFlag, setCopyFlag] = useState(false);
+    const [copyFlagRef, setCopyFlagRef] = useState(false);
 
     const hanldeCopyEvent = (e) => {
         navigator.clipboard.writeText(
@@ -89,8 +79,15 @@ const Edes = () => {
         navigator.clipboard.writeText(
             productinfo.product_infor.referencE_NO
         );
-        setCopyFlag(true);
+        setCopyFlagRef(true);
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+            setCopyFlag(false);
+            setCopyFlagRef(false);
+        }, 1000);
+    }, [copyFlag, copyFlagRef]);
 
     if (copyFlag) {
         toast.success("Order ID Coped");
@@ -101,7 +98,6 @@ const Edes = () => {
     if (productinfo?.status_datetime) {
         lastItem =
             productinfo?.status_datetime[productinfo?.status_datetime?.length - 1];
-        // console.log("lastItem", lastItem);
     } else {
         lastItem = false;
     }
@@ -161,7 +157,6 @@ const Edes = () => {
                 singleStatus.processing_status == "Product in Transit" ||
                 singleStatus.processing_status == "Product Received by FE"
             ) {
-                console.log("Product in Bag ");
                 setPicked("deliveredEdes");
                 setPickedStatus(true);
             }
@@ -173,7 +168,6 @@ const Edes = () => {
                 singleStatus.processing_status == "Product in Transit" ||
                 singleStatus.processing_status == "Product Received by FE"
             ) {
-                console.log("Product in Transit ");
                 setTransit("deliveredEdes");
                 setTransitStatus(true);
             }
@@ -183,7 +177,6 @@ const Edes = () => {
                 singleStatus.processing_status == "Product Delivered" ||
                 singleStatus.processing_status == "Product Received by FE"
             ) {
-                console.log("Product Received by FE ");
                 setOutForDelivery("deliveredEdes");
                 setOutForDeliveryStatus(true);
             }
@@ -191,7 +184,6 @@ const Edes = () => {
                 singleStatus.processing_status == "Product Delivered " ||
                 singleStatus.processing_status == "Product Delivered"
             ) {
-                console.log("Product Delivered ");
                 setDelivered("deliveredEdes");
                 setDeliveredStatus(true);
                 setHoldStatus(false);
@@ -242,11 +234,11 @@ const Edes = () => {
                             </p>
                             {copyFlag ? (
                                 <FaRegCopy
-                                    className="deliveredEdes"
+                                    className="deliveredEdes cursor-pointer"
                                     onClick={(e) => hanldeCopyEvent(e)}
                                 />
                             ) : (
-                                <FaRegCopy onClick={(e) => hanldeCopyEvent(e)} />
+                                <FaRegCopy className="cursor-pointer" onClick={(e) => hanldeCopyEvent(e)} />
                             )}
                         </div>
                     </div>
@@ -257,9 +249,9 @@ const Edes = () => {
                                 {productinfo.product_infor &&
                                     productinfo.product_infor.referencE_NO}
                             </p>
-                            {copyFlag ? (
+                            {copyFlagRef ? (
                                 <FaRegCopy
-                                    className="deliveredEdes"
+                                    className="deliveredEdes cursor-pointer"
                                     onClick={(e) => hanldeCopyRef(e)}
                                 />
                             ) : (
